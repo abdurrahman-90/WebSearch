@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q7-kO-Dnr" userLabel="BarView">
+                                <rect key="frame" x="0.0" y="35" width="414" height="52"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pux-qu-P5T">
+                                        <rect key="frame" x="10" y="3" width="394" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="bv8-2F-V0W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a0B-i8-d8h">
+                                        <rect key="frame" x="0.0" y="43" width="414" height="4"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="pux-qu-P5T" firstAttribute="leading" secondItem="8q7-kO-Dnr" secondAttribute="leading" constant="10" id="RK9-SN-14d"/>
+                                    <constraint firstItem="pux-qu-P5T" firstAttribute="leading" secondItem="8q7-kO-Dnr" secondAttribute="leading" constant="10" id="UCQ-Ts-RSk"/>
+                                    <constraint firstItem="a0B-i8-d8h" firstAttribute="leading" secondItem="8q7-kO-Dnr" secondAttribute="leading" id="YvS-l2-0lw"/>
+                                    <constraint firstItem="pux-qu-P5T" firstAttribute="top" secondItem="8q7-kO-Dnr" secondAttribute="top" constant="3" id="bsc-he-85D"/>
+                                    <constraint firstItem="a0B-i8-d8h" firstAttribute="top" secondItem="pux-qu-P5T" secondAttribute="bottom" constant="3" id="exb-jA-sYL"/>
+                                    <constraint firstAttribute="trailing" secondItem="a0B-i8-d8h" secondAttribute="trailing" id="k3D-V8-jLn"/>
+                                    <constraint firstAttribute="trailing" secondItem="pux-qu-P5T" secondAttribute="trailing" constant="10" id="wgb-Xx-d44"/>
+                                    <constraint firstAttribute="trailing" secondItem="pux-qu-P5T" secondAttribute="trailing" constant="10" id="zsa-xd-ayM"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-mS-tmG">
+                                <rect key="frame" x="0.0" y="87" width="414" height="705"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="705" id="JxU-sa-o2a"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hz-QO-rqK">
+                                <rect key="frame" x="0.0" y="797" width="414" height="60"/>
+                                <items>
+                                    <barButtonItem title="Back" width="104" id="2uN-MS-5DZ">
+                                        <connections>
+                                            <action selector="Back:" destination="BYZ-38-t0r" id="QJa-lT-HpG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="73" style="plain" systemItem="fixedSpace" id="7H8-ba-ulb"/>
+                                    <barButtonItem title="Forward" id="zlr-ra-fii" userLabel="Forward">
+                                        <connections>
+                                            <action selector="Forward:" destination="BYZ-38-t0r" id="nal-x0-Lob"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7M0-gt-Ag6"/>
+                                    <barButtonItem title="Reload Btn" id="8Lu-GF-fhJ" userLabel="Forward">
+                                        <connections>
+                                            <action selector="ReloadBtn:" destination="BYZ-38-t0r" id="I9z-gM-xl6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Hz-QO-rqK" firstAttribute="top" secondItem="kgq-mS-tmG" secondAttribute="bottom" constant="5" id="TLW-e7-4gU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kgq-mS-tmG" secondAttribute="bottom" constant="70" id="Ybw-UG-L62"/>
+                            <constraint firstItem="kgq-mS-tmG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cev-fR-mFM"/>
+                            <constraint firstItem="8q7-kO-Dnr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="35" id="e7u-aM-QkJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kgq-mS-tmG" secondAttribute="trailing" id="fWH-5r-8pW"/>
+                            <constraint firstItem="7Hz-QO-rqK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iw1-Zh-imh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Hz-QO-rqK" secondAttribute="bottom" constant="5" id="jeB-Fx-hGP"/>
+                            <constraint firstItem="8q7-kO-Dnr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oVL-yl-MTY"/>
+                            <constraint firstItem="kgq-mS-tmG" firstAttribute="top" secondItem="8q7-kO-Dnr" secondAttribute="bottom" id="peC-2v-uGd"/>
+                            <constraint firstItem="8q7-kO-Dnr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xAu-23-J4z"/>
+                            <constraint firstItem="7Hz-QO-rqK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yGB-54-p34"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ProgressBar" destination="a0B-i8-d8h" id="WRT-Mg-elu"/>
+                        <outlet property="backBtn" destination="2uN-MS-5DZ" id="WWC-Vh-24d"/>
+                        <outlet property="forwardBtn" destination="zlr-ra-fii" id="wQ1-0N-hnd"/>
+                        <outlet property="reloadBtn" destination="8Lu-GF-fhJ" id="VNz-Hi-Z96"/>
+                        <outlet property="searchText" destination="pux-qu-P5T" id="Mdi-cf-Zn8"/>
+                        <outlet property="webView" destination="kgq-mS-tmG" id="prR-r2-Ae4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="76.339285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
